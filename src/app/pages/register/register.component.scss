@@ -1,0 +1,32 @@
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .login-form-inner {
+    width: 500px;
+    max-width: 100%;
+    padding: 20px;
+    .box-signup {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .text-danger {
+      font-size: 13px;
+      margin-top: 6px;
+    }
+    .opt-for-register {
+      text-align: center;
+    }
+  }
+  .btn-login-facebook {
+    background-color: #3c66c4;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 38px;
+    i {
+      font-size: 24px;
+    }
+  }
+}

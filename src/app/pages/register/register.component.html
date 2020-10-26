@@ -1,0 +1,95 @@
+<div class="login-form">
+  <aside class="login-form-inner">
+    <div class="card">
+      <article class="card-body">
+        <h4 class="card-title text-center">Đăng ký tài khoản mới!</h4>
+        <form method="post" [formGroup]="formRegister" (ngSubmit)=register(formRegister.value)>
+          <div class="form-group">
+            <label>Email</label>
+            <input name="" formControlName="email" class="form-control" placeholder="Email" type="email"
+              [pattern]="emailPattern">
+            <div class="text-danger"
+              *ngIf=" formRegister.controls.email.touched &&  formRegister.controls.email.errors?.required ">
+              Email không được bỏ trống!
+            </div>
+            <div class="text-danger" *ngIf="formRegister?.controls?.email?.errors?.pattern">
+              Email không hợp lệ!
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-6">
+                <label>Mật khẩu</label>
+                <input class="form-control" formControlName="password" placeholder="******" type="password">
+                <div class="text-danger"
+                  *ngIf=" formRegister?.controls?.password?.touched && formRegister?.controls?.password?.errors?.required ">
+                  Mật khẩu không được bỏ trống!
+                </div>
+                <div class="text-danger" *ngIf="formRegister?.controls?.password?.errors?.minlength ">
+                  Mật khẩu phải nhiều hơn 6 ký tự!
+                </div>
+                <div class="text-danger" *ngIf="formRegister?.controls?.password?.errors?.maxlength ">
+                  Mật khẩu phải ít hơn 32 ký tự!
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <label>Nhập lại mật khẩu</label>
+                <input class="form-control" formControlName="confirmPassword" placeholder="******" type="password">
+                <div class="text-danger"
+                  *ngIf=" formRegister?.controls?.confirmPassword?.touched && formRegister?.hasError('mismatchedPasswords')">
+                  Mật khẩu không khớp
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row input-phone">
+            <div class="col-6">
+              <label>Số điện thoại</label>
+              <input class="form-control" formControlName="phone" placeholder="Số điện thoại" type="text"/>
+              <div class="text-danger"
+                *ngIf="formRegister.controls?.phone.touched && formRegister.controls?.phone.errors?.required ">
+                Số điện thoại không được bỏ trống!
+              </div>
+              <div class="text-danger"
+                *ngIf="formRegister.controls?.phone.touched && formRegister.controls?.phone.errors?.wrongNumber && formRegister.value?.phone ">
+                Số điện thoại không hợp lệ!
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="text-center d-block mt-4 mb-4">Loại người dùng</label>
+            <div class="opt-for-register">
+              <button type="button" class="btn btn-custom-size mr-2" (click)="selectUserType(0)"
+                [ngClass]="currentUserType == 0 ? 'btn-primary' : 'btn-secondary'">
+                Nhà phân phối
+              </button>
+              <button type="button" class="btn btn-custom-size" (click)="selectUserType(1)"
+                [ngClass]="currentUserType == 1 ? 'btn-primary' : 'btn-secondary'">
+                Chi nhánh
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label><input type="checkbox" class="mr-1" formControlName="condition">Tôi đã đọc và đồng ý với điều khoản của Tìm Nguồn Hàng</label>
+            </div>
+          </div>
+          <ngb-alert *ngIf="errorMessage" [type]="'danger'" [dismissible]="false">{{errorMessage}}</ngb-alert>
+          <div class="form-group d-flex justify-content-center mt-2">
+            <button type="submit" class="btn btn-success btn-custom-size mr-2" msLoadingButton [loading]="isCallingApi"
+              [disabled]="!formRegister.controls?.condition.value">
+              Đăng ký
+            </button>
+            <button class="btn btn-login-facebook" type="button">
+              <i class="fa fa-facebook-square mr-2" aria-hidden="true"></i>
+              <span>Đăng nhập bằng Facebook</span>
+            </button>
+          </div>
+          <div class="in-member d-flex justify-content-center">
+            Đã có tài khoản? <a class="ml-1" [routerLink]="'/login'">Đăng nhập</a>
+          </div>
+        </form>
+      </article>
+    </div>
+  </aside>
+</div>

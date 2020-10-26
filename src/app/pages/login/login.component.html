@@ -1,0 +1,61 @@
+<div class="login-form">
+  <aside class="login-form-inner">
+    <div class="card">
+      <article class="card-body">
+        <h4 class="card-title text-center mb-5">Đăng nhập vào Tìm Nguồn Hàng</h4>
+        <form method="post" [formGroup]="formLogin" (ngSubmit)=login(formLogin.value)>
+          <div class="form-group">
+            <label>Email</label>
+            <input formControlName="email" class="form-control" placeholder="Email" type="email"
+              [pattern]="emailPattern">
+            <div class="text-danger"
+              *ngIf=" formLogin.controls.email.touched && formLogin.controls.email.errors?.required ">
+              Email không được để trống!
+            </div>
+            <div class="text-danger" *ngIf="formLogin?.controls?.email?.errors?.pattern">
+              Email không hợp lệ!
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mật khẩu</label>
+            <input class="form-control" formControlName="password" placeholder="******" type="password">
+            <div class="text-danger"
+              *ngIf="formLogin?.controls?.password?.errors?.required && formLogin?.controls?.password?.touched">
+              Mật khẩu không được để trống!
+            </div>
+            <div class="text-danger"
+              *ngIf="formLogin?.controls?.password?.errors?.minlength && formLogin?.controls?.password?.touched">
+              Mật khẩu phải nhiều hơn 6 ký tự!
+            </div>
+            <div class="text-danger"
+              *ngIf="formLogin?.controls?.password?.errors?.maxlength && formLogin?.controls?.password?.touched">
+              Mật khẩu phải ít hơn 32 ký tự!
+            </div>
+          </div>
+          <div class="form-group">
+            <a class="float-right" [routerLink]="'/forgot-password'">Quên mật khẩu?</a>
+            <div class="checkbox">
+              <label><input class="mr-1" type="checkbox" formControlName="rememberMe">Ghi nhớ đăng nhập</label>
+            </div>
+          </div>
+
+          <ngb-alert *ngIf="errorMessage" [type]="'danger'" [dismissible]="false">{{errorMessage}}</ngb-alert>
+          <div class="form-group d-flex justify-content-center mt-2">
+            <button type="submit" msLoadingButton [loading]="isCallingApi"
+              class="btn btn-success btn-login btn-custom-size mr-2">
+              Đăng nhập
+            </button>
+            <button class="btn btn-login-facebook" type="button">
+              <i class="fa fa-facebook-square mr-2" aria-hidden="true"></i>
+              <span>Đăng nhập bằng Facebook</span>
+            </button>
+          </div>
+        </form>
+        <div class="box-signup">
+          <p class="mr-2 mt-2">Bạn chưa có tài khoản?</p>
+          <a [routerLink]="'/register'" class="btn btn-outline-primary btn-custom-size">Đăng ký</a>
+        </div>
+      </article>
+    </div>
+  </aside>  
+</div>
