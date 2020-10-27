@@ -1,1 +1,112 @@
-<p>home works!</p>
+<app-top-header></app-top-header>
+<app-primary-menu></app-primary-menu>
+
+<div id="main-content">
+  <div class="container">
+    <div class="intro-content">
+      <div id="category-menu-container">
+        <div class="category-item">
+          <a>
+            <p>Quần áo</p>
+          </a>
+          <a>
+            <p>Giày dép</p>
+          </a>
+          <a>
+            <p>Mỹ phẩm</p>
+          </a>
+          <a>
+            <p>Điện gia dụng</p>
+          </a>
+          <a>
+            <p>Nhà cửa đời sống</p>
+          </a>
+          <a>
+            <p>Hàng tiêu dùng - thực phẩm</p>
+          </a>
+          <a>
+            <p>Xe máy, ô tô, xe đạp</p>
+          </a>
+          <a>
+            <p>Sách, VPP & quà tặng</p>
+          </a>
+          <a>
+            <p>Làm đẹp, sức khỏe</p>
+          </a>
+        </div>
+      </div>
+      <div class="list-product-container">
+        <div class="slider">
+          <div class="row">
+            <div class="col-md-6" style="padding: 0;">
+              <ngx-slick-carousel class="carousel" 
+                #slickModal="slick-carousel" 
+                [config]="slideConfig"
+              >
+                <div ngxSlickItem  class="slide">
+                  <img width="100%" height="462px" src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-9/122332738_3178434232264958_7906574338501688743_n.jpg?_nc_cat=111&ccb=2&_nc_sid=b9115d&_nc_ohc=qgnvZJRxh_MAX-AQo4y&_nc_ht=scontent.fhan2-2.fna&oh=d0c2b082a462b23826cd31f8dc215a98&oe=5FBC2C35" alt="" width="100%">
+                </div>
+                <div ngxSlickItem  class="slide">
+                  <img width="100%" height="462px" src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-9/122332738_3178434232264958_7906574338501688743_n.jpg?_nc_cat=111&ccb=2&_nc_sid=b9115d&_nc_ohc=qgnvZJRxh_MAX-AQo4y&_nc_ht=scontent.fhan2-2.fna&oh=d0c2b082a462b23826cd31f8dc215a98&oe=5FBC2C35" alt="" width="100%">
+                </div>
+                <div ngxSlickItem  class="slide">
+                  <img width="100%" height="462px" src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-9/122332738_3178434232264958_7906574338501688743_n.jpg?_nc_cat=111&ccb=2&_nc_sid=b9115d&_nc_ohc=qgnvZJRxh_MAX-AQo4y&_nc_ht=scontent.fhan2-2.fna&oh=d0c2b082a462b23826cd31f8dc215a98&oe=5FBC2C35" alt="" width="100%">
+                </div>
+              </ngx-slick-carousel>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6 product-item-container">
+                  <app-product-item></app-product-item>
+                </div>
+                <div class="col-md-6 product-item-container">
+                  <app-product-item></app-product-item>
+                </div>
+              </div>      
+              <div class="row">
+                <div class="col-md-6 product-item-container">
+                  <app-product-item></app-product-item>
+                </div>
+                <div class="col-md-6 product-item-container">
+                  <app-product-item></app-product-item>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 product-item-container">
+              <app-product-item></app-product-item>
+            </div>
+            <div class="col-md-3 product-item-container">
+              <app-product-item></app-product-item>
+            </div>
+            <div class="col-md-3 product-item-container">
+              <app-product-item></app-product-item>
+            </div>
+            <div class="col-md-3 product-item-container">
+              <app-product-item></app-product-item>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 product-item-container">
+              <app-product-item></app-product-item>
+            </div>
+            <div class="col-md-3 product-item-container">
+              <app-product-item></app-product-item>
+            </div>
+            <div class="col-md-3 product-item-container">
+              <app-product-item></app-product-item>
+            </div>
+            <div class="col-md-3 product-item-container">
+              <app-product-item></app-product-item>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer">
+
+</div>

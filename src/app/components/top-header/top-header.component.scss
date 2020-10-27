@@ -1,0 +1,24 @@
+#top-header {
+  height: 40px;
+  position: relative;
+  background: rgb(29, 113, 171);
+  .logo-container {
+    img {
+      margin-top: 6px;
+      margin-left: 24px;
+    }
+  }
+  .right-menu {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    a {
+      color: white;
+      height: 40px;
+      line-height: 40px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+}

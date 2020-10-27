@@ -1,0 +1,16 @@
+#main-content {
+  margin-top: 10px;
+}
+
+#category-menu-container {
+  width: 240px;
+}
+.list-product-container {
+  width: calc(100% - 240px);
+}
+.intro-content {
+  display: flex;
+  .product-item-container {
+    padding: 0;
+  }
+}
